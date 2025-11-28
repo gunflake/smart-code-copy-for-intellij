@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.lifebuddy.smartcopy</id>
+    <name>Smart Copy for CLI</name>
+    <vendor email="your-email@example.com" url="https://github.com/lifebuddy">LifeBuddy</vendor>
+
+    <description><![CDATA[
+    <p>Copy the current selection as a CLI-friendly reference.</p>
+    <p>This plugin converts the selected code range into a compact path + line range format like <code>src/utils/test.py:37-42</code>,
+    or optionally followed by a formatted Markdown code block.</p>
+    
+    <h3>Features</h3>
+    <ul>
+        <li><b>Copy Path Only</b> (Alt+Shift+C): Copies file path and line range only</li>
+        <li><b>Copy Path and Code</b> (Ctrl+Alt+Shift+C): Copies file path, line range, and code block</li>
+    </ul>
+    
+    <h3>Example Output</h3>
+    <pre>src/utils/helper.py:37-42</pre>
+    
+    <p>Perfect for referencing code in issues, pull requests, documentation, or chat tools.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <group id="SmartCopy.Menu" text="Smart Copy" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
+        </group>
+        
+        <action id="SmartCopy.CopyPathOnly"
+                class="com.lifebuddy.smartcopy.CopyPathOnlyAction"
+                text="Copy Path Only"
+                description="Copy file path and line range to clipboard">
+            <add-to-group group-id="SmartCopy.Menu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift C"/>
+        </action>
+        
+        <action id="SmartCopy.CopyPathAndCode"
+                class="com.lifebuddy.smartcopy.CopyPathAndCodeAction"
+                text="Copy Path and Code"
+                description="Copy file path, line range, and code block to clipboard">
+            <add-to-group group-id="SmartCopy.Menu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="SmartCopy.CopyPathOnly"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift C"/>
+        </action>
+    </actions>
+</idea-plugin>
