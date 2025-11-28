@@ -5,6 +5,10 @@ A JetBrains IDE plugin that copies your selected code along with its file path a
 Works with: **IntelliJ IDEA**, **PyCharm**, **WebStorm**, **GoLand**, **Rider**, and all other JetBrains IDEs.
 
 ---
+## Screenshot
+![Screenshot](images/screenshot.jpg)
+
+---
 
 ## Features
 
