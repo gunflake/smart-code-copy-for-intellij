@@ -29,6 +29,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
+        untilBuild.set("")  // 상한 제한 없음
     }
 
     signPlugin {
