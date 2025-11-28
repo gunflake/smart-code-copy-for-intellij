@@ -10,8 +10,8 @@
     
     <h3>Features</h3>
     <ul>
-        <li><b>Copy Path Only</b> (Alt+Shift+C): Copies file path and line range only</li>
-        <li><b>Copy Path and Code</b> (Ctrl+Alt+Shift+C): Copies file path, line range, and code block</li>
+        <li><b>Copy Path Only</b> (Cmd+Shift+C / Ctrl+Shift+C): Copies file path and line range only</li>
+        <li><b>Copy Path and Code</b> (Cmd+Alt+Shift+C / Ctrl+Alt+Shift+C): Copies file path, line range, and code block</li>
     </ul>
     
     <h3>Example Output</h3>
@@ -33,7 +33,9 @@
                 description="Copy file path and line range to clipboard">
             <add-to-group group-id="SmartCopy.Menu" anchor="first"/>
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="alt shift C"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift C"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta shift C"/>
+            <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="meta shift C"/>
         </action>
         
         <action id="SmartCopy.CopyPathAndCode"
@@ -43,6 +45,8 @@
             <add-to-group group-id="SmartCopy.Menu" anchor="last"/>
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="SmartCopy.CopyPathOnly"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift C"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta alt shift C"/>
+            <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="meta alt shift C"/>
         </action>
     </actions>
 </idea-plugin>

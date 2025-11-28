@@ -10,10 +10,10 @@ Works with: **IntelliJ IDEA**, **PyCharm**, **WebStorm**, **GoLand**, **Rider**,
 
 This plugin provides **two copy modes**:
 
-| Mode | Shortcut | Description |
-|------|----------|-------------|
-| **Copy Path Only** | `Alt+Shift+C` | Copies file path and line range only |
-| **Copy Path and Code** | `Ctrl+Alt+Shift+C` | Copies file path, line range, and code block |
+| Mode | Mac | Windows/Linux | Description |
+|------|-----|---------------|-------------|
+| **Copy Path Only** | `Cmd+Shift+C` | `Ctrl+Shift+C` | Copies file path and line range only |
+| **Copy Path and Code** | `Cmd+Alt+Shift+C` | `Ctrl+Alt+Shift+C` | Copies file path, line range, and code block |
 
 Both commands are also available via the **right-click context menu** when text is selected.
 
@@ -23,7 +23,7 @@ Both commands are also available via the **right-click context menu** when text 
 
 ### Example 1: Copy Path Only
 
-Select lines 37-42 in `src/utils/helper.py` and press `Alt+Shift+C`:
+Select lines 37-42 in `src/utils/helper.py` and press `Cmd+Shift+C` (Mac) or `Ctrl+Shift+C` (Windows):
 
 **Clipboard result:**
 ```
@@ -32,7 +32,7 @@ src/utils/helper.py:37-42
 
 ### Example 2: Copy Path and Code
 
-Select the same lines and press `Ctrl+Alt+Shift+C`:
+Select the same lines and press `Cmd+Alt+Shift+C` (Mac) or `Ctrl+Alt+Shift+C` (Windows):
 
 **Clipboard result:**
 ````
